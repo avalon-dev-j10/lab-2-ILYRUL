@@ -1,27 +1,54 @@
 package ru.avalon.java.dev.j10.labs.shapes;
 
 
-public abstract class Circle implements Shape, Ellipse{
-    double r;
+public  class Circle implements Shape, Point, Ellipse{
+    private float  x;
+    private float  y;
+    private float r;
     
-        public Circle(double r);
-        this.r = r;
- 
-
+    
    
-    public double getArea() {
-               
-        return r*r*Math.PI;
-    }
+    public Circle() {
+     x = (float) (10 * Math.random());
+     y = (float) (10 * Math.random());
+     r = (float) (10 * Math.random());
 
+    }
+      
         
     @Override
-    public double getLength() {
-      return 2*r*Math.PI; 
+    public float getArea() {
+       return (float) (r*r*Math.PI);
+    }
+    @Override
+    public int getRotation() {
+        return 0;
     }
 
+   
+    @Override
+    public float getLength() {
+    return (float) (2*Math.PI*r); 
+    }
+    @Override
+    public float getX() {
+        return (float) x;
+    }
     
-    public int getRotation(int rotation) {
-         return rotation;
+    @Override
+    public float getY() {
+        return (float) y;
+}
+    @Override
+    public String toString() {
+        return "Circle (" +
+                " r = " + r +
+                ')';
     }
 }
+
+     
+   
+    
+
+
