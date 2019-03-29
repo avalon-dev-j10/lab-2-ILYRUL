@@ -14,7 +14,7 @@ public class Main {
 
         Shape[] shapes = new Shape[10];
 
-       shapes[0] = new Rectangle();
+        shapes[0] = new Rectangle();
         shapes[1] = new Triangle();
         shapes[2] = new Circle() ;
         shapes[3] = new Rectangle();
@@ -26,7 +26,7 @@ public class Main {
         shapes[9] = new Rectangle();
         
 
-int shapeNo = 0;
+        int shapeNo = 0;
         Shape maxShape = shapes[0];
         float maxArea = shapes[0].getArea();
         for (int x = 0; x < shapes.length; x++){
@@ -36,6 +36,15 @@ int shapeNo = 0;
                 shapeNo = x;
             }
         }
+        
+        /*  TODO (Замечания №1 ЛР№2)
+            - В твоей реализации поиска MAX площади, можно сразу maxArea приравнять первому
+            элементу shapes[0], цикл for начать с 1, вместо 0.
+            - Сначала выведи полную информацию о всех фигурах (какой тип, и какая площадь),
+            а затем отдельной строкой вывести фигуру с MAX площадью.
+            - Исправить!
+        */
+        
         System.out.println("Максимальная площадь = " + maxArea + " у фигуры №" 
                 + shapeNo);
         }

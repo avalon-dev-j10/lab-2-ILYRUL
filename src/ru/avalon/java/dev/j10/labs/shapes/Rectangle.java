@@ -18,7 +18,17 @@ public class Rectangle implements Shape, Polygon{
      rotation = (int)(360*Math.random());   // ротация
     }
    
- 
+    /*  TODO (Замечания №1 ЛР№2)
+        - На основе чего ты создал методы getX() и getY(), проверь свои интрфейсы!
+        - Все переменные делать финализированными бесмысленно, данные параметры возможно
+        понадобиться изменить при работе с ними. Например: координаты прямоугольника или угол
+        повотора, могут меняться, если мы будем перемещать фигуру по плоскости или поворачивать.
+        - Стороны прямоугольнка тоже могут меняться.
+        - Дописать комментарии методов класса
+        - В некоторых в методах делать принудительное преобразование к типу (float),
+        не обязательно, потому что данное выражение и так является float
+        - Убрать лишние преобразование к типу (float)!!!
+    */ 
     @Override
     public float getArea() {
        return  (float) (a*b);
@@ -31,7 +41,7 @@ public class Rectangle implements Shape, Polygon{
 
        @Override
     public float getPerimeter() {
-        return  (float) (2*(a+b));
+        return  (float) (2 * (a + b));
     }
     
     public float getX() {
@@ -40,6 +50,5 @@ public class Rectangle implements Shape, Polygon{
     
     public float getY() {
         return (float) y;
-}
-    
     }
+}
