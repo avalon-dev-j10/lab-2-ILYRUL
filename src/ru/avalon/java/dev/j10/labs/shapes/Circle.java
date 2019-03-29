@@ -2,16 +2,16 @@ package ru.avalon.java.dev.j10.labs.shapes;
 
 
 public  class Circle implements Shape, Point, Ellipse{
-    private float  x;
-    private float  y;
-    private float r;
+    private float  x;   // точка по х
+    private float  y;   // точка по y
+    private float r;    // радиус
     
     
    
     public Circle() {
-     x = (float) (10 * Math.random());
-     y = (float) (10 * Math.random());
-     r = (float) (10 * Math.random());
+     x = (float) (10 * Math.random());  // точка по х
+     y = (float) (10 * Math.random());  // точка по y
+     r = (float) (10 * Math.random());  // радиус
 
     }
       
@@ -38,13 +38,8 @@ public  class Circle implements Shape, Point, Ellipse{
     @Override
     public float getY() {
         return (float) y;
-}
-    @Override
-    public String toString() {
-        return "Circle (" +
-                " r = " + r +
-                ')';
     }
+    
 }
 
      

@@ -2,26 +2,20 @@ package ru.avalon.java.dev.j10.labs.shapes;
 
 
 public class Rectangle implements Shape, Polygon{
-    private final float  a;
-    private final float  b;
-    private final float  x;
-    private final float  y;
-    private final int rotation;
+    private final float  a;     // сторона а
+    private final float  b;     // сторона b
+    private final float  x;     // точка по х
+    private final float  y;     // точка по y
+    private final int rotation; // ротация
 
-//    public Rectangle(double  a, double  b, double  x, double  y, int rotation){
-//     a = (float)(100*Math.random());
-//     b = (float)(100*Math.random());
-//     x = (float)(100*Math.random());
-//     y = (float)(100*Math.random());
-//     rotation = (int)(100*Math.random());
-//    }
+
 
     public Rectangle() {
-     a = (float)(100*Math.random());
-     b = (float)(100*Math.random());
-     x = (float)(100*Math.random());
-     y = (float)(100*Math.random());
-     rotation = (int)(360*Math.random());
+     a = (float)(10*Math.random());          // сторона а
+     b = (float)(10*Math.random());         // сторона b
+     x = (float)(10*Math.random());         // точка по х
+     y = (float)(10*Math.random());         // точка по y
+     rotation = (int)(360*Math.random());   // ротация
     }
    
  
@@ -48,8 +42,4 @@ public class Rectangle implements Shape, Polygon{
         return (float) y;
 }
     
-    @Override
-    public String toString() {
-        return "Rectangle (" + " a = " + a + ", b = " + b +')';                    
     }
-}

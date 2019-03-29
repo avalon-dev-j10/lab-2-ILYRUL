@@ -1,34 +1,24 @@
 package ru.avalon.java.dev.j10.labs.shapes;
 
 
-public class Triangle implements Shape, Polygon{
-    private final float a;
-    private final float  b;
-    private final float  c;
-    private final float  h;
-    private final float  x;
-    private final float  y;
-    private final int rotation;
+public class Triangle implements Shape, Point, Polygon{
+    private final float a;      // сторона а
+    private final float  b;     // сторона b
+    private final float  c;     // сторона c
+    private final float  h;     // высота
+    private final float  x;     // точка по х
+    private final float  y;     // точка по y
+    private final int rotation;  // ротация
      
-//     public Triangle(double  a,double  b, double  c,double  x, double  y,double  h, int rotation){
-//     a = (float)(100*Math.random());
-//     b = (float)(100*Math.random());
-//     c = (float)(100*Math.random());
-//     h = (float)(100*Math.random());
-//     x = (float)(100*Math.random());
-//     y = (float)(100*Math.random());
-//     rotation = (int)(100*Math.random());
-//    
-//    }
 
     public Triangle() {
-     a = (float)(10*Math.random());
-     b = (float)(10*Math.random());
-     c = (float)(10*Math.random());
-     h = (float)(10*Math.random());
-     x = (float)(10*Math.random());
-     y = (float)(10*Math.random());
-     rotation = (int)(360*Math.random());   
+     a = (float)(10*Math.random());     // сторона а
+     b = (float)(10*Math.random());     // сторона b
+     c = (float)(10*Math.random());     // сторона c
+     h = (float)(10*Math.random());     // высота
+     x = (float)(10*Math.random());     // точка по х
+     y = (float)(10*Math.random());     // точка по y
+     rotation = (int)(360*Math.random());  // ротация 
     }
 
     
@@ -42,16 +32,18 @@ public class Triangle implements Shape, Polygon{
     @Override
     public float getArea() {
         
-         double p = (a + b + c) / 2;
+         float p = (a + b + c) / 2;
         return   (float) Math.sqrt (p * (p - a) * (p - b) * (p - c));
          
         
     }
 
+    @Override
     public float getX() {
         return (float) x;
     }
     
+    @Override
     public float getY() {
         return (float) y;
     }
@@ -60,13 +52,7 @@ public class Triangle implements Shape, Polygon{
     public int getRotation() {
          return rotation;
     }
-    @Override
-    public String toString() {
-        return "Triangle (" +
-                " a = " + a +
-                " , h = " + h +
-                ')';
-    }
+    
 }
     
 
