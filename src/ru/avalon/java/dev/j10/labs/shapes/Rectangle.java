@@ -2,11 +2,11 @@ package ru.avalon.java.dev.j10.labs.shapes;
 
 
 public class Rectangle implements Shape, Polygon{
-    private final float  a;     // сторона а
-    private final float  b;     // сторона b
-    private final float  x;     // точка по х
-    private final float  y;     // точка по y
-    private final int rotation; // ротация
+    private  float  a;     // сторона а
+    private  float  b;     // сторона b
+    private  float  x;     // точка по х
+    private  float  y;     // точка по y
+    private  int rotation; // ротация
 
 
 
@@ -17,6 +17,8 @@ public class Rectangle implements Shape, Polygon{
      y = (float)(10*Math.random());         // точка по y
      rotation = (int)(360*Math.random());   // ротация
     }
+
+    
    
     /*  TODO (Замечания №1 ЛР№2)
         - На основе чего ты создал методы getX() и getY(), проверь свои интрфейсы!
@@ -29,26 +31,39 @@ public class Rectangle implements Shape, Polygon{
         не обязательно, потому что данное выражение и так является float
         - Убрать лишние преобразование к типу (float)!!!
     */ 
+    
+    // метод возвращает площадь прямоугольника
     @Override
     public float getArea() {
        return  (float) (a*b);
     }
-    
+    // метод возвращает сторону а прямоугольника
+    public float getA() {
+        return a;
+    }
+// метод возвращает сторону b прямоугольника
+    public float getB() {
+        return b;
+        
+    }
+    // метод возвращает ротацию
     @Override
     public int getRotation() {
         return rotation;
     }
-
+// метод возвращает периметр прямоугольника
        @Override
     public float getPerimeter() {
         return  (float) (2 * (a + b));
     }
     
+    // метод возвращает абсциссу х прямоугольника
     public float getX() {
-        return (float) x;
+        return  x;
     }
     
+    // метод возвращает ординату y прямоугольника
     public float getY() {
-        return (float) y;
+        return  y;
     }
 }

@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
     
-
+//инициализируем фигуры
         Shape[] shapes = new Shape[10];
 
         shapes[0] = new Rectangle();
@@ -25,11 +25,12 @@ public class Main {
         shapes[8] = new Triangle();
         shapes[9] = new Rectangle();
         
-
+//выводим площади всех фигур
         int shapeNo = 0;
         Shape maxShape = shapes[0];
         float maxArea = shapes[0].getArea();
         for (int x = 0; x < shapes.length; x++){
+            System.out.println(shapes[x] + " Площадь фигуры = " + shapes[x].getArea());
             if (maxArea < shapes[x].getArea()){
                 maxShape = shapes[x];
                 maxArea = shapes[x].getArea();
@@ -44,7 +45,7 @@ public class Main {
             а затем отдельной строкой вывести фигуру с MAX площадью.
             - Исправить!
         */
-        
+    // выводим площадь и номер фигуры с максимальной площадью 
         System.out.println("Максимальная площадь = " + maxArea + " у фигуры №" 
                 + shapeNo);
         }

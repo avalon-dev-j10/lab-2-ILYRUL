@@ -2,13 +2,13 @@ package ru.avalon.java.dev.j10.labs.shapes;
 
 
 public class Triangle implements Shape, Point, Polygon{
-    private final float a;      // сторона а
-    private final float  b;     // сторона b
-    private final float  c;     // сторона c
-    private final float  h;     // высота
-    private final float  x;     // точка по х
-    private final float  y;     // точка по y
-    private final int rotation;  // ротация
+    private  float a;      // сторона а
+    private  float  b;     // сторона b
+    private  float  c;     // сторона c
+    private  float  h;     // высота
+    private  float  x;     // точка по х
+    private  float  y;     // точка по y
+    private  int rotation;  // ротация
      
 
     public Triangle() {
@@ -21,24 +21,31 @@ public class Triangle implements Shape, Point, Polygon{
      rotation = (int)(360*Math.random());  // ротация 
     }
 
-    
+
+    //метод возвращает  периметр треугольника
     @Override
-    public float getPerimeter() {
+    public float getPerimeter() {  
         
-       return  (float) (a+b+c);
+       return   (a+b+c);
        
     }
     
+    //метод возвращает  площадь треугольника, если стороны соответствуют правилам
+    //построения треугольника выводим его площадь, если не соответствуют то выводим ноль
     @Override
-    public float getArea() {
+    public float getArea() {  
         float p = (a + b + c) / 2;
-        return   (float) Math.sqrt (p * (p - a) * (p - b) * (p - c));
-         
+        if (a + b > c && a + c > b && b + c > a)
+        return    (float) Math.sqrt (p * (p - a) * (p - b) * (p - c));
+        else 
+            return 0;
+    }    
+
         /*  TODO (Замечания №1 ЛР№2)
             - Все переменные делать финализированными бесмысленно, данные параметры возможно
             понадобиться изменить при работе с ними. Например: координаты треугольника или угол
-            повотора, могут меняться, если мы будем перемещать фигуру по плоскости или поворачивать.
-            - Стороны и высота треугольнка тоже могут меняться.
+            повотора, могут меняться, если мы будем перемещать фигуру по плоскости или поворачивать. Исправил!
+            - Стороны и высота треугольнка тоже могут меняться. Исправил!
             - Если ты рандомно создаешь три стороны
             треугольника, ты должна соблюдать главное его правило - "Сумма любых двух
             сторон, должна быть больше чем третья"
@@ -51,20 +58,23 @@ public class Triangle implements Shape, Point, Polygon{
             не обязательно, потому что данное выражение и так является float
             - Убрать лишние преобразование к типу (float)!!!
         */
-    }
-
+    
+    
+// метод возвращает абсциссу х
     @Override
-    public float getX() {
-        return (float) x;
+    public float getX() { 
+        return  x;
     }
     
+    // метод возвращает ординату y
     @Override
-    public float getY() {
-        return (float) y;
+    public float getY() { 
+        return  y;
     }
     
+    //метод возвращает  ротацию
     @Override
-    public int getRotation() {
+    public int getRotation() { 
          return rotation;
     }
     
